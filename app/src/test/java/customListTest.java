@@ -17,11 +17,37 @@ public class customListTest {
     }
 
     @Test
+    public void getCountTest(){
+        int listSize = list.getCount();
+        assertEquals(listSize,0);
+        City city = new City("Halifax","NS");
+        list.addCity(city);
+        assertEquals(listSize,1);
+    }
+
+    @Test
     public void addCityTest(){
         int listSize = list.getCount();
         City city = new City("Halifax","NS");
         list.addCity(city);
         assertEquals(list.getCount(),listSize+1);
+    }
+
+    @Test
+    public void hasCityTest(){
+        City city = new City("Halifax","NS");
+        assertEquals(list.hasCity(city),false);
+        list.addCity(city);
+        assertEquals(list.hasCity(city),true);
+    }
+
+    @Test
+    public void deleteCityTest(){
+        City city = new City("Halifax","NS");
+        list.addCity(city);
+        assertEquals(list.hasCity(city),true);
+        list.deleteCity(city);
+        assertEquals(list.hasCity(city),false);
     }
 
 }
