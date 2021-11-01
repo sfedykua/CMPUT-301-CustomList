@@ -18,11 +18,10 @@ public class customListTest {
 
     @Test
     public void getCountTest(){
-        int listSize = list.getCount();
-        assertEquals(listSize,0);
+        assertEquals(list.getCount(),0);
         City city = new City("Halifax","NS");
         list.addCity(city);
-        assertEquals(listSize,1);
+        assertEquals(list.getCount(),1);
     }
 
     @Test
